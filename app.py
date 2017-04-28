@@ -12,7 +12,7 @@ class Boat(ndb.Model):
 
 class MainPage(webapp2.RequestHandler):
 	def get(self):
-		self.response.write("hello")
+		self.response.write("Welcome to the assignment 3 boat and slip API. Type http://localhost:8080/boats to get started.")
 
 class BaseHandler(webapp2.RequestHandler):
 	'''from http://webapp2.readthedocs.io/en/latest/guide/exceptions.html'''
@@ -133,13 +133,29 @@ class BoatHandler(BaseHandler):
 		else:
 			self.handleClientError(400, 'Please provide a valid id')
 
+	def delete(self, id=None):
+		'''hand delete requests (delete a boat)'''
+		if id:
+			b = ndb.Key(urlsafe=id).get()
+			if(b):
+				# remove the boat from the slip
+				# delete the entity
+				k = b.key
+				k.delete() # delete is called on a key
+				self.handleClientError(204, '') # not actually an error, but we have this nice function :)
+			else:
+				self.handleClientError(404, 'No such boat')
+				return
+		else:
+			self.handleClientError(400, 'Please provide a valid id')
+
 allowed_methods = webapp2.WSGIApplication.allowed_methods
 new_allowed_methods = allowed_methods.union(('PATCH', ))
 webapp2.WSGIApplication.allowed_methods = new_allowed_methods
 
 app = webapp2.WSGIApplication([
 	('/', MainPage),
-	('/boat', BoatHandler),
-	('/boats', BoatHandler),
-	('/boat/(.*)', BoatHandler),
+	('/boat', BoatHandler), # create a new boat
+	('/boats', BoatHandler), # return all boats
+	('/boat/(.*)', BoatHandler), # get, post, patch, or delete a specific boat (pass id) 
 	], debug=True)
