@@ -1,0 +1,986 @@
+{
+	"variables": [],
+	"info": {
+		"name": "assgn3",
+		"_postman_id": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "boats",
+			"description": "",
+			"item": [
+				{
+					"name": "get all boats no content",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Get boat response is 204\"] = responseCode.code === 204;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/boats",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "create a boat",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"var type = postman.getEnvironmentVariable(\"btype\");",
+									"var leng = postman.getEnvironmentVariable(\"blength\");",
+									"var namae = postman.getEnvironmentVariable(\"name\");",
+									"console.log(typeof(namae));",
+									"postman.setEnvironmentVariable(\"boatId\", jsonData.bid);",
+									"tests[\"Created boat response is 201\"] = responseCode.code === 201;",
+									"tests[\"Check added boat type\"] = jsonData.btype === type;",
+									"tests[\"Check added boat length\"] = jsonData.blength=== (Number(leng));",
+									"tests[\"Check added boat namae\"] = jsonData.name === namae;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/boat",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"{{name}}\", \"btype\":\"{{btype}}\", \"blength\":{{blength}}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "create a boat missing required",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// var jsonData = JSON.parse(responseBody);",
+									"tests[\"Created boat response is 400\"] = responseCode.code === 400;",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/boat",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"btype\":\"{{btype}}\", \"blength\":{{blength}}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get a boat (no id)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Get boat response is 400\"] = responseCode.code === 400;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/boat/",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get a boat (valid)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"var type = postman.getEnvironmentVariable(\"btype\");",
+									"var leng = postman.getEnvironmentVariable(\"blength\");",
+									"var namae = postman.getEnvironmentVariable(\"name\");",
+									"var id = postman.getEnvironmentVariable(\"boatId\");",
+									"postman.setEnvironmentVariable(\"boatUrl\", jsonData.self);",
+									"tests[\"Get boat response is 200\"] = responseCode.code === 200;",
+									"tests[\"Check boat type\"] = jsonData.btype === type;",
+									"tests[\"Check boat length\"] = jsonData.blength=== (Number(leng));",
+									"tests[\"Check boat namae\"] = jsonData.name === namae;",
+									"tests[\"Check boat id\"] = jsonData.bid === id;",
+									"tests[\"Check boat at sea\"] = jsonData.at_sea === true;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/boat/{{boatId}}",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Jim\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "modify a boat bad key",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Modify response is 400\"] = responseCode.code === 403;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}{{boatUrl}}",
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"bid\": true}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "modify a boat",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"var type = postman.getEnvironmentVariable(\"btype\");",
+									"var leng = postman.getEnvironmentVariable(\"blength\");",
+									"var namae = postman.getEnvironmentVariable(\"elvis\");",
+									"var url = postman.getEnvironmentVariable(\"boatUrl\");",
+									"postman.setEnvironmentVariable(\"boatId\", jsonData.bid);",
+									"tests[\"Patch response is 200\"] = responseCode.code === 200;",
+									"tests[\"Check boat type\"] = jsonData.btype === type;",
+									"tests[\"Check boat length\"] = jsonData.blength=== (Number(leng));",
+									"tests[\"Check boat namae\"] = jsonData.name === namae;",
+									"tests[\"Check boat url\"] = jsonData.self === url;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/boat/{{boatId}}",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"{{elvis}}\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "replace a boat",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"var type = postman.getEnvironmentVariable(\"coolboat\");",
+									"var leng = postman.getEnvironmentVariable(\"leng2\");",
+									"var namae = postman.getEnvironmentVariable(\"cj\");",
+									"var url = postman.getEnvironmentVariable(\"boatUrl\");",
+									"tests[\"Patch response is 200\"] = responseCode.code === 200;",
+									"tests[\"Check boat type\"] = jsonData.btype === type;",
+									"tests[\"Check boat length\"] = jsonData.blength=== (Number(leng));",
+									"tests[\"Check boat namae\"] = jsonData.name === namae;",
+									"tests[\"Check boat url\"] = jsonData.self === url;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/boat/{{boatId}}",
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"{{cj}}\", \"blength\":{{leng2}}, \"btype\":\"{{coolboat}}\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "create a boat 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"var type = postman.getEnvironmentVariable(\"sloop\");",
+									"var leng = postman.getEnvironmentVariable(\"bleng3\");",
+									"var namae = postman.getEnvironmentVariable(\"name2\");",
+									"postman.setEnvironmentVariable(\"boatId2\", jsonData.bid);",
+									"tests[\"Created boat response is 201\"] = responseCode.code === 201;",
+									"tests[\"Check added boat type\"] = jsonData.btype === type;",
+									"tests[\"Check added boat length\"] = jsonData.blength=== (Number(leng));",
+									"tests[\"Check added boat namae\"] = jsonData.name === namae;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/boat",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"{{name2}}\", \"btype\":\"{{sloop}}\", \"blength\":{{bleng3}}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get all boats",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"numBoats\", jsonData.length);",
+									"tests[\"Get boat response is 200\"] = responseCode.code === 200;",
+									"tests[\"Check num boats\"] = jsonData.length === 2;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/boats",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "delete a boat",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Delete boat response is 204\"] = responseCode.code === 204;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/boat/{{boatId2}}",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get all boats copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Get boat response is 200\"] = responseCode.code === 200;",
+									"nb = postman.getEnvironmentVariable(\"numBoats\");",
+									"tests[\"Length is numBoats-1\"] = jsonData.length === (Number(nb)-1);",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/boats",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "slips",
+			"description": "",
+			"item": [
+				{
+					"name": "create slip",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"var num = postman.getEnvironmentVariable(\"slipnum1\");",
+									"var n = \"null\";",
+									"postman.setEnvironmentVariable(\"slipId\", jsonData.sid);",
+									"postman.setEnvironmentVariable(\"slipUrl\", jsonData.self);",
+									"tests[\"Created slip response is 201\"] = responseCode.code === 201;",
+									"tests[\"Check added slip number\"] = jsonData.number === (Number(num));",
+									"tests[\"Check added slip current_boat\"] = jsonData.current_boat === null;",
+									"tests[\"Check added slip arr. date\"] = jsonData.arrival_date === null;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slip",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"number\":{{slipnum1}}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "create slip missing required",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Created slip response is 400\"] = responseCode.code === 400;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slip",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"arrival_date\":{{slipnum1}}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get a slip",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"var num = postman.getEnvironmentVariable(\"slipnum1\");",
+									"var id = postman.getEnvironmentVariable(\"slipId\");",
+									"var url = postman.getEnvironmentVariable(\"slipUrl\");",
+									"tests[\"Get slip response is 200\"] = responseCode.code === 200;",
+									"tests[\"Get slip number\"] = jsonData.number === (Number(num));",
+									"tests[\"Get slip current_boat\"] = jsonData.current_boat === null;",
+									"tests[\"Get slip arr. date\"] = jsonData.arrival_date === null;",
+									"tests[\"Get slip id\"] = jsonData.sid === id;",
+									"tests[\"Get slip url\"] = jsonData.self === url;",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slip/{{slipId}}",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get a slip (no id)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Get slip response is 400\"] = responseCode.code === 400;",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slip/",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "modify a slip bad key copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Modify response is 403\"] = responseCode.code === 403;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slip/{{slipId}}",
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"current_boat\": \"hey\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "modify a slip",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"var num = postman.getEnvironmentVariable(\"slipnum2\");",
+									"var id = postman.getEnvironmentVariable(\"slipId\");",
+									"var url = postman.getEnvironmentVariable(\"slipUrl\");",
+									"tests[\"Get slip response is 200\"] = responseCode.code === 200;",
+									"tests[\"Get slip number\"] = jsonData.number === (Number(num));",
+									"tests[\"Get slip current_boat\"] = jsonData.current_boat === null;",
+									"tests[\"Get slip arr. date\"] = jsonData.arrival_date === null;",
+									"tests[\"Get slip id\"] = jsonData.sid === id;",
+									"tests[\"Get slip url\"] = jsonData.self === url;",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slip/{{slipId}}",
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"number\":{{slipnum2}}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "modify a slip no boat, arrival date",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Modify response is 403\"] = responseCode.code === 403;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slip/{{slipId}}",
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"number\":{{slipnum2}}, \"arrival_date\":\"{{date2}}\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "put boat in slip",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"var num = postman.getEnvironmentVariable(\"slipnum1\");",
+									"var bid = postman.getEnvironmentVariable(\"boatId\");",
+									"var d = postman.getEnvironmentVariable(\"date1\");",
+									"bid = \"/boat/\"+bid;",
+									"postman.setEnvironmentVariable(\"slipId\", jsonData.sid);",
+									"postman.setEnvironmentVariable(\"slipUrl\", jsonData.self);",
+									"tests[\"Added boat response is 200\"] = responseCode.code === 200;",
+									"tests[\"Check added slip current_boat\"] = jsonData.current_boat === bid;",
+									"tests[\"Check added slip arr. date\"] = jsonData.arrival_date === d;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slip/{{slipId}}/boat/",
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"arrival_date\":\"{{date1}}\", \"bid\":\"{{boatId}}\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get a boat (valid) not at sea",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Check boat at sea\"] = jsonData.at_sea === false;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/boat/{{boatId}}",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Jim\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get boat in slip",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"var type = postman.getEnvironmentVariable(\"coolboat\");",
+									"var leng = postman.getEnvironmentVariable(\"leng2\");",
+									"var namae = postman.getEnvironmentVariable(\"cj\");",
+									"var id = postman.getEnvironmentVariable(\"boatId\");",
+									"tests[\"Get boat response is 200\"] = responseCode.code === 200;",
+									"tests[\"Check boat type\"] = jsonData.btype === type;",
+									"tests[\"Check boat length\"] = jsonData.blength=== (Number(leng));",
+									"tests[\"Check boat namae\"] = jsonData.name === namae;",
+									"tests[\"Check boat id\"] = jsonData.bid === id;",
+									"tests[\"Check boat at sea\"] = jsonData.at_sea === false;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slip/{{slipId}}/boat/",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "remove a boat from slip",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Delete slip response is 200\"] = responseCode.code === 200;",
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Check added slip current_boat\"] = jsonData.current_boat === null;",
+									"tests[\"Check added slip arr. date\"] = jsonData.arrival_date === null;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slip/{{slipId}}/boat",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "create a boat 2 copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"var type = postman.getEnvironmentVariable(\"sloop\");",
+									"var leng = postman.getEnvironmentVariable(\"bleng3\");",
+									"var namae = postman.getEnvironmentVariable(\"name2\");",
+									"postman.setEnvironmentVariable(\"boatId2\", jsonData.bid);",
+									"tests[\"Created boat response is 201\"] = responseCode.code === 201;",
+									"tests[\"Check added boat type\"] = jsonData.btype === type;",
+									"tests[\"Check added boat length\"] = jsonData.blength=== (Number(leng));",
+									"tests[\"Check added boat namae\"] = jsonData.name === namae;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/boat",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"{{name2}}\", \"btype\":\"{{sloop}}\", \"blength\":{{bleng3}}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "put boat in slip copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"var num = postman.getEnvironmentVariable(\"slipnum1\");",
+									"var bid = postman.getEnvironmentVariable(\"boatId\");",
+									"var d = postman.getEnvironmentVariable(\"date1\");",
+									"bid = \"/boat/\"+bid;",
+									"tests[\"Added boat response is 200\"] = responseCode.code === 200;",
+									"tests[\"Check added slip current_boat\"] = jsonData.current_boat === bid;",
+									"tests[\"Check added slip arr. date\"] = jsonData.arrival_date === d;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slip/{{slipId}}/boat/",
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"arrival_date\":\"{{date1}}\", \"bid\":\"{{boatId}}\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "put boat in occupied slip",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Added boat response is 403\"] = responseCode.code === 403;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slip/{{slipId}}/boat/",
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"arrival_date\":\"{{date1}}\", \"bid\":\"{{boatId}}\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "replace a slip",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"var num = postman.getEnvironmentVariable(\"slipnum2\");",
+									"var bid = postman.getEnvironmentVariable(\"boatId2\");",
+									"var d = postman.getEnvironmentVariable(\"date2\");",
+									"bid = \"/boat/\"+bid;",
+									"tests[\"Added boat response is 200\"] = responseCode.code === 200;",
+									"tests[\"Check added slip current_boat\"] = jsonData.current_boat === bid;",
+									"tests[\"Check added slip arr. date\"] = jsonData.arrival_date === d;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slip/{{slipId}}",
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"number\":{{slipnum2}}, \"bid\":\"{{boatId2}}\", \"arrival_date\":\"{{date2}}\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get a boat 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Check added boat at sea\"] = jsonData.at_sea === false;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/boat/{{boatId2}}",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"{{name2}}\", \"btype\":\"{{sloop}}\", \"blength\":{{bleng3}}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "create slip copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"var num = postman.getEnvironmentVariable(\"slipnum3\");",
+									"postman.setEnvironmentVariable(\"slipId2\", jsonData.sid);",
+									"tests[\"Created slip response is 201\"] = responseCode.code === 201;",
+									"tests[\"Check added slip number\"] = jsonData.number === (Number(num));",
+									"tests[\"Check added slip current_boat\"] = jsonData.current_boat === null;",
+									"tests[\"Check added slip arr. date\"] = jsonData.arrival_date === null;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slip",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"number\":{{slipnum3}}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "remove a boat from slip copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Delete slip response is 404\"] = responseCode.code === 404;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slip/{{slipId2}}/boat",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get all slips",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"numSlips\", jsonData.length);",
+									"tests[\"Get slip response is 200\"] = responseCode.code === 200;",
+									"tests[\"Check num slips\"] = jsonData.length === 2;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slips",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "delete a slip",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Delete slip response is 204\"] = responseCode.code === 204;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slip/{{slipId}}",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get a boat 2 copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Check added boat at sea\"] = jsonData.at_sea === true;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/boat/{{boatId2}}",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"{{name2}}\", \"btype\":\"{{sloop}}\", \"blength\":{{bleng3}}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get all slips after delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"ns = postman.getEnvironmentVariable(\"numSlips\");",
+									"tests[\"Get slip response is 200\"] = responseCode.code === 200;",
+									"tests[\"Check num slips\"] = jsonData.length === (Number(ns)-1);",
+									"console.log(jsonData.length)",
+									"console.log(ns)"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/slips",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,3450 @@
+{
+	"id": "2bd5a5cd-cb43-b3d0-1368-369e4b6dbcf0",
+	"name": "assgn3",
+	"allTests": [],
+	"timestamp": 1493606775937,
+	"collection_id": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "6d11e6c5-08db-95d4-faa1-0d59be8cba5d",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+		"name": "assgn3",
+		"description": "",
+		"order": [],
+		"folders": [
+			{
+				"id": "9aa3a7be-f7ee-7e30-3585-555e55ecf7bf",
+				"name": "boats",
+				"description": "",
+				"write": true,
+				"order": [
+					"e16ff893-baab-4285-4b37-8546b4f24242",
+					"426e3af1-ae92-60eb-1686-4a1983acc06a",
+					"7e2332eb-b047-e5c5-50c5-148ad7cf1d5b",
+					"0296170f-87ab-b878-a467-7a2f02ff943d",
+					"eecda2d5-597d-aa29-98ca-2030a7a23dfd",
+					"3c09d4be-415d-641a-d5b0-8736cd80bb3e",
+					"19844cda-6d6d-9b88-91b8-79342c038e2f",
+					"34832042-77cb-7f50-156a-5cade0406c49",
+					"5a750dc5-9805-9fec-09f0-edc42c1cf47d",
+					"479e702a-17f0-70ff-1432-eb7feea89f8c",
+					"704241ce-86fb-4ff7-59ff-db25a28577c0",
+					"f26a43b5-97c6-15b4-5036-e75035252f55"
+				],
+				"collection": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"owner": "1888993",
+				"collection_id": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475"
+			},
+			{
+				"id": "80d8be71-6e46-e543-f557-0bf6095b1fa2",
+				"name": "slips",
+				"description": "",
+				"write": true,
+				"order": [
+					"10f7bcf0-f507-57d7-20d9-5c58c51f2977",
+					"0a1af730-5ad6-c72e-f0f6-76fe5233e53d",
+					"f36bf67f-971f-f6bb-0c13-4871abe712ab",
+					"07d6481e-2d57-574f-20da-53a30668ae65",
+					"5e99434b-1f0c-dd84-ae51-e4ebbccbc603",
+					"75b35a16-edff-d191-437d-f3cc2ece3027",
+					"251f86c3-d1bb-1933-02a6-5dbaf90ad312",
+					"180f9790-7a7e-a903-dc10-4a8c54073b0c",
+					"0965da62-d1d1-996f-7ded-565082cd31ac",
+					"6fef5796-1c08-fafd-8a1a-c5d32506dbb0",
+					"8d81e94a-a4c9-7450-396b-b15ebed25933",
+					"d92659fe-4d2b-3176-796a-130533babd2a",
+					"bd106d8f-b246-5c7b-bfa9-fe378eadf1be",
+					"61314092-d3bc-c352-3a93-49579d7a03a2",
+					"43185c9a-6648-7481-a812-6e7582e07085",
+					"ab788010-8517-9694-0dec-2a3bf22d568c",
+					"34dec853-c4a3-f682-4364-2a21a2719552",
+					"8fc96047-f06b-c37f-a1c6-9e44a03ed466",
+					"4851325e-dbb1-d484-a062-e3324a9b8cb2",
+					"7e55ea1b-e52f-4390-b839-3ea441000c87",
+					"94576964-bbf5-297d-440e-f9efd3da5df4",
+					"b387e1a2-33a9-9a37-645a-349fa6986b11"
+				],
+				"collection": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"owner": "1888993",
+				"collection_id": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475"
+			}
+		],
+		"requests": [
+			{
+				"id": "0296170f-87ab-b878-a467-7a2f02ff943d",
+				"headers": "",
+				"url": "{{url}}/boat/",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": "tests[\"Get boat response is 400\"] = responseCode.code === 400;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493592956474,
+				"name": "get a boat (no id)",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "07d6481e-2d57-574f-20da-53a30668ae65",
+				"headers": "",
+				"url": "{{url}}/slip/",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": "tests[\"Get slip response is 400\"] = responseCode.code === 400;\n",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493597194563,
+				"name": "get a slip (no id)",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "0965da62-d1d1-996f-7ded-565082cd31ac",
+				"headers": "",
+				"url": "{{url}}/boat/{{boatId}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "GET",
+				"data": "{\"name\":\"Jim\"}",
+				"dataMode": "raw",
+				"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Check boat at sea\"] = jsonData.at_sea === false;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493598116502,
+				"name": "get a boat (valid) not at sea",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "0a1af730-5ad6-c72e-f0f6-76fe5233e53d",
+				"headers": "",
+				"url": "{{url}}/slip",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": "{\"arrival_date\":{{slipnum1}}}",
+				"dataMode": "raw",
+				"tests": "tests[\"Created slip response is 400\"] = responseCode.code === 400;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493596599937,
+				"name": "create slip missing required",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "10f7bcf0-f507-57d7-20d9-5c58c51f2977",
+				"headers": "",
+				"url": "{{url}}/slip",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": "{\"number\":{{slipnum1}}}",
+				"dataMode": "raw",
+				"tests": "var jsonData = JSON.parse(responseBody);\nvar num = postman.getEnvironmentVariable(\"slipnum1\");\nvar n = \"null\";\npostman.setEnvironmentVariable(\"slipId\", jsonData.sid);\npostman.setEnvironmentVariable(\"slipUrl\", jsonData.self);\ntests[\"Created slip response is 201\"] = responseCode.code === 201;\ntests[\"Check added slip number\"] = jsonData.number === (Number(num));\ntests[\"Check added slip current_boat\"] = jsonData.current_boat === null;\ntests[\"Check added slip arr. date\"] = jsonData.arrival_date === null;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493597113341,
+				"name": "create slip",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "180f9790-7a7e-a903-dc10-4a8c54073b0c",
+				"headers": "",
+				"url": "{{url}}/slip/{{slipId}}/boat/",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "PUT",
+				"data": "{\"arrival_date\":\"{{date1}}\", \"bid\":\"{{boatId}}\"}",
+				"dataMode": "raw",
+				"tests": "var jsonData = JSON.parse(responseBody);\nvar num = postman.getEnvironmentVariable(\"slipnum1\");\nvar bid = postman.getEnvironmentVariable(\"boatId\");\nvar d = postman.getEnvironmentVariable(\"date1\");\nbid = \"/boat/\"+bid;\npostman.setEnvironmentVariable(\"slipId\", jsonData.sid);\npostman.setEnvironmentVariable(\"slipUrl\", jsonData.self);\ntests[\"Added boat response is 200\"] = responseCode.code === 200;\ntests[\"Check added slip current_boat\"] = jsonData.current_boat === bid;\ntests[\"Check added slip arr. date\"] = jsonData.arrival_date === d;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493598451796,
+				"name": "put boat in slip",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "19844cda-6d6d-9b88-91b8-79342c038e2f",
+				"headers": "Content-Type: application/x-www-form-urlencoded\n",
+				"url": "{{url}}/boat/{{boatId}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "PATCH",
+				"data": "{\"name\": \"{{elvis}}\"}",
+				"dataMode": "raw",
+				"tests": "var jsonData = JSON.parse(responseBody);\nvar type = postman.getEnvironmentVariable(\"btype\");\nvar leng = postman.getEnvironmentVariable(\"blength\");\nvar namae = postman.getEnvironmentVariable(\"elvis\");\nvar url = postman.getEnvironmentVariable(\"boatUrl\");\npostman.setEnvironmentVariable(\"boatId\", jsonData.bid);\ntests[\"Patch response is 200\"] = responseCode.code === 200;\ntests[\"Check boat type\"] = jsonData.btype === type;\ntests[\"Check boat length\"] = jsonData.blength=== (Number(leng));\ntests[\"Check boat namae\"] = jsonData.name === namae;\ntests[\"Check boat url\"] = jsonData.self === url;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493593844041,
+				"name": "modify a boat",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "251f86c3-d1bb-1933-02a6-5dbaf90ad312",
+				"headers": "",
+				"url": "{{url}}/slip/{{slipId}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "PATCH",
+				"data": "{\"number\":{{slipnum2}}, \"arrival_date\":\"{{date2}}\"}",
+				"dataMode": "raw",
+				"tests": "tests[\"Modify response is 403\"] = responseCode.code === 403;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493597903627,
+				"name": "modify a slip no boat, arrival date",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "34832042-77cb-7f50-156a-5cade0406c49",
+				"headers": "",
+				"url": "{{url}}/boat/{{boatId}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "PUT",
+				"data": "{\"name\":\"{{cj}}\", \"blength\":{{leng2}}, \"btype\":\"{{coolboat}}\"}",
+				"dataMode": "raw",
+				"version": 2,
+				"tests": "var jsonData = JSON.parse(responseBody);\nvar type = postman.getEnvironmentVariable(\"coolboat\");\nvar leng = postman.getEnvironmentVariable(\"leng2\");\nvar namae = postman.getEnvironmentVariable(\"cj\");\nvar url = postman.getEnvironmentVariable(\"boatUrl\");\ntests[\"Patch response is 200\"] = responseCode.code === 200;\ntests[\"Check boat type\"] = jsonData.btype === type;\ntests[\"Check boat length\"] = jsonData.blength=== (Number(leng));\ntests[\"Check boat namae\"] = jsonData.name === namae;\ntests[\"Check boat url\"] = jsonData.self === url;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493594129704,
+				"name": "replace a boat",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "34dec853-c4a3-f682-4364-2a21a2719552",
+				"headers": "",
+				"url": "{{url}}/slip",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": "{\"number\":{{slipnum3}}}",
+				"dataMode": "raw",
+				"tests": "var jsonData = JSON.parse(responseBody);\nvar num = postman.getEnvironmentVariable(\"slipnum3\");\npostman.setEnvironmentVariable(\"slipId2\", jsonData.sid);\ntests[\"Created slip response is 201\"] = responseCode.code === 201;\ntests[\"Check added slip number\"] = jsonData.number === (Number(num));\ntests[\"Check added slip current_boat\"] = jsonData.current_boat === null;\ntests[\"Check added slip arr. date\"] = jsonData.arrival_date === null;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493600452705,
+				"name": "create slip copy",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "3c09d4be-415d-641a-d5b0-8736cd80bb3e",
+				"headers": "",
+				"url": "{{url}}{{boatUrl}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "PATCH",
+				"data": "{\"bid\": true}",
+				"dataMode": "raw",
+				"tests": "tests[\"Modify response is 400\"] = responseCode.code === 403;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493593312821,
+				"name": "modify a boat bad key",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "426e3af1-ae92-60eb-1686-4a1983acc06a",
+				"headers": "",
+				"url": "{{url}}/boat",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": "{\"name\":\"{{name}}\", \"btype\":\"{{btype}}\", \"blength\":{{blength}}}",
+				"dataMode": "raw",
+				"tests": "var jsonData = JSON.parse(responseBody);\nvar type = postman.getEnvironmentVariable(\"btype\");\nvar leng = postman.getEnvironmentVariable(\"blength\");\nvar namae = postman.getEnvironmentVariable(\"name\");\nconsole.log(typeof(namae));\npostman.setEnvironmentVariable(\"boatId\", jsonData.bid);\ntests[\"Created boat response is 201\"] = responseCode.code === 201;\ntests[\"Check added boat type\"] = jsonData.btype === type;\ntests[\"Check added boat length\"] = jsonData.blength=== (Number(leng));\ntests[\"Check added boat namae\"] = jsonData.name === namae;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493592606005,
+				"name": "create a boat",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "43185c9a-6648-7481-a812-6e7582e07085",
+				"headers": "",
+				"url": "{{url}}/slip/{{slipId}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "PUT",
+				"data": "{\"number\":{{slipnum2}}, \"bid\":\"{{boatId2}}\", \"arrival_date\":\"{{date2}}\"}",
+				"dataMode": "raw",
+				"version": 2,
+				"tests": "var jsonData = JSON.parse(responseBody);\nvar num = postman.getEnvironmentVariable(\"slipnum2\");\nvar bid = postman.getEnvironmentVariable(\"boatId2\");\nvar d = postman.getEnvironmentVariable(\"date2\");\nbid = \"/boat/\"+bid;\ntests[\"Added boat response is 200\"] = responseCode.code === 200;\ntests[\"Check added slip current_boat\"] = jsonData.current_boat === bid;\ntests[\"Check added slip arr. date\"] = jsonData.arrival_date === d;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493603128526,
+				"name": "replace a slip",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "479e702a-17f0-70ff-1432-eb7feea89f8c",
+				"headers": "",
+				"url": "{{url}}/boats",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": "var jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"numBoats\", jsonData.length);\ntests[\"Get boat response is 200\"] = responseCode.code === 200;\ntests[\"Check num boats\"] = jsonData.length === 2;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493603859620,
+				"name": "get all boats",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "4851325e-dbb1-d484-a062-e3324a9b8cb2",
+				"headers": "",
+				"url": "{{url}}/slips",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": "var jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"numSlips\", jsonData.length);\ntests[\"Get slip response is 200\"] = responseCode.code === 200;\ntests[\"Check num slips\"] = jsonData.length === 2;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493600981501,
+				"name": "get all slips",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "5a750dc5-9805-9fec-09f0-edc42c1cf47d",
+				"headers": "",
+				"url": "{{url}}/boat",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": "{\"name\":\"{{name2}}\", \"btype\":\"{{sloop}}\", \"blength\":{{bleng3}}}",
+				"dataMode": "raw",
+				"tests": "var jsonData = JSON.parse(responseBody);\nvar type = postman.getEnvironmentVariable(\"sloop\");\nvar leng = postman.getEnvironmentVariable(\"bleng3\");\nvar namae = postman.getEnvironmentVariable(\"name2\");\npostman.setEnvironmentVariable(\"boatId2\", jsonData.bid);\ntests[\"Created boat response is 201\"] = responseCode.code === 201;\ntests[\"Check added boat type\"] = jsonData.btype === type;\ntests[\"Check added boat length\"] = jsonData.blength=== (Number(leng));\ntests[\"Check added boat namae\"] = jsonData.name === namae;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493594444456,
+				"name": "create a boat 2",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "5e99434b-1f0c-dd84-ae51-e4ebbccbc603",
+				"headers": "",
+				"url": "{{url}}/slip/{{slipId}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "PATCH",
+				"data": "{\"current_boat\": \"hey\"}",
+				"dataMode": "raw",
+				"tests": "tests[\"Modify response is 403\"] = responseCode.code === 403;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493597826072,
+				"name": "modify a slip bad key copy",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "61314092-d3bc-c352-3a93-49579d7a03a2",
+				"headers": "",
+				"url": "{{url}}/slip/{{slipId}}/boat/",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "PUT",
+				"data": "{\"arrival_date\":\"{{date1}}\", \"bid\":\"{{boatId}}\"}",
+				"dataMode": "raw",
+				"tests": "tests[\"Added boat response is 403\"] = responseCode.code === 403;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493606183686,
+				"name": "put boat in occupied slip",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "6fef5796-1c08-fafd-8a1a-c5d32506dbb0",
+				"headers": "",
+				"url": "{{url}}/slip/{{slipId}}/boat/",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"version": 2,
+				"tests": "var jsonData = JSON.parse(responseBody);\nvar type = postman.getEnvironmentVariable(\"coolboat\");\nvar leng = postman.getEnvironmentVariable(\"leng2\");\nvar namae = postman.getEnvironmentVariable(\"cj\");\nvar id = postman.getEnvironmentVariable(\"boatId\");\ntests[\"Get boat response is 200\"] = responseCode.code === 200;\ntests[\"Check boat type\"] = jsonData.btype === type;\ntests[\"Check boat length\"] = jsonData.blength=== (Number(leng));\ntests[\"Check boat namae\"] = jsonData.name === namae;\ntests[\"Check boat id\"] = jsonData.bid === id;\ntests[\"Check boat at sea\"] = jsonData.at_sea === false;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493599013367,
+				"name": "get boat in slip",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "704241ce-86fb-4ff7-59ff-db25a28577c0",
+				"headers": "",
+				"url": "{{url}}/boat/{{boatId2}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "DELETE",
+				"data": null,
+				"dataMode": "params",
+				"tests": "tests[\"Delete boat response is 204\"] = responseCode.code === 204;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493595377288,
+				"name": "delete a boat",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "75b35a16-edff-d191-437d-f3cc2ece3027",
+				"headers": "",
+				"url": "{{url}}/slip/{{slipId}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "PATCH",
+				"data": "{\"number\":{{slipnum2}}}",
+				"dataMode": "raw",
+				"tests": "var jsonData = JSON.parse(responseBody);\nvar num = postman.getEnvironmentVariable(\"slipnum2\");\nvar id = postman.getEnvironmentVariable(\"slipId\");\nvar url = postman.getEnvironmentVariable(\"slipUrl\");\ntests[\"Get slip response is 200\"] = responseCode.code === 200;\ntests[\"Get slip number\"] = jsonData.number === (Number(num));\ntests[\"Get slip current_boat\"] = jsonData.current_boat === null;\ntests[\"Get slip arr. date\"] = jsonData.arrival_date === null;\ntests[\"Get slip id\"] = jsonData.sid === id;\ntests[\"Get slip url\"] = jsonData.self === url;\n",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493597636869,
+				"name": "modify a slip",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "7e2332eb-b047-e5c5-50c5-148ad7cf1d5b",
+				"headers": "",
+				"url": "{{url}}/boat",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": "{\"btype\":\"{{btype}}\", \"blength\":{{blength}}}",
+				"dataMode": "raw",
+				"tests": "// var jsonData = JSON.parse(responseBody);\ntests[\"Created boat response is 400\"] = responseCode.code === 400;\n",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493592907812,
+				"name": "create a boat missing required",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "7e55ea1b-e52f-4390-b839-3ea441000c87",
+				"headers": "",
+				"url": "{{url}}/slip/{{slipId}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "DELETE",
+				"data": null,
+				"dataMode": "params",
+				"tests": "tests[\"Delete slip response is 204\"] = responseCode.code === 204;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493602990747,
+				"name": "delete a slip",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "8d81e94a-a4c9-7450-396b-b15ebed25933",
+				"headers": "",
+				"url": "{{url}}/slip/{{slipId}}/boat",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "DELETE",
+				"data": null,
+				"dataMode": "params",
+				"tests": "tests[\"Delete slip response is 200\"] = responseCode.code === 200;\nvar jsonData = JSON.parse(responseBody);\ntests[\"Check added slip current_boat\"] = jsonData.current_boat === null;\ntests[\"Check added slip arr. date\"] = jsonData.arrival_date === null;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493599776163,
+				"name": "remove a boat from slip",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "8fc96047-f06b-c37f-a1c6-9e44a03ed466",
+				"headers": "",
+				"url": "{{url}}/slip/{{slipId2}}/boat",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "DELETE",
+				"data": null,
+				"dataMode": "params",
+				"tests": "tests[\"Delete slip response is 404\"] = responseCode.code === 404;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493605716823,
+				"name": "remove a boat from slip copy",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "94576964-bbf5-297d-440e-f9efd3da5df4",
+				"headers": "",
+				"url": "{{url}}/boat/{{boatId2}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "GET",
+				"data": "{\"name\":\"{{name2}}\", \"btype\":\"{{sloop}}\", \"blength\":{{bleng3}}}",
+				"dataMode": "raw",
+				"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Check added boat at sea\"] = jsonData.at_sea === true;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493603151378,
+				"name": "get a boat 2 copy",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "ab788010-8517-9694-0dec-2a3bf22d568c",
+				"headers": "",
+				"url": "{{url}}/boat/{{boatId2}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "GET",
+				"data": "{\"name\":\"{{name2}}\", \"btype\":\"{{sloop}}\", \"blength\":{{bleng3}}}",
+				"dataMode": "raw",
+				"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Check added boat at sea\"] = jsonData.at_sea === false;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493600347564,
+				"name": "get a boat 2",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "b387e1a2-33a9-9a37-645a-349fa6986b11",
+				"headers": "",
+				"url": "{{url}}/slips",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": "var jsonData = JSON.parse(responseBody);\nns = postman.getEnvironmentVariable(\"numSlips\");\ntests[\"Get slip response is 200\"] = responseCode.code === 200;\ntests[\"Check num slips\"] = jsonData.length === (Number(ns)-1);\nconsole.log(jsonData.length)\nconsole.log(ns)",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493603681298,
+				"name": "get all slips after delete",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "bd106d8f-b246-5c7b-bfa9-fe378eadf1be",
+				"headers": "",
+				"url": "{{url}}/slip/{{slipId}}/boat/",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "PUT",
+				"data": "{\"arrival_date\":\"{{date1}}\", \"bid\":\"{{boatId}}\"}",
+				"dataMode": "raw",
+				"tests": "var jsonData = JSON.parse(responseBody);\nvar num = postman.getEnvironmentVariable(\"slipnum1\");\nvar bid = postman.getEnvironmentVariable(\"boatId\");\nvar d = postman.getEnvironmentVariable(\"date1\");\nbid = \"/boat/\"+bid;\ntests[\"Added boat response is 200\"] = responseCode.code === 200;\ntests[\"Check added slip current_boat\"] = jsonData.current_boat === bid;\ntests[\"Check added slip arr. date\"] = jsonData.arrival_date === d;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493606372091,
+				"name": "put boat in slip copy",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "d92659fe-4d2b-3176-796a-130533babd2a",
+				"headers": "",
+				"url": "{{url}}/boat",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": "{\"name\":\"{{name2}}\", \"btype\":\"{{sloop}}\", \"blength\":{{bleng3}}}",
+				"dataMode": "raw",
+				"tests": "var jsonData = JSON.parse(responseBody);\nvar type = postman.getEnvironmentVariable(\"sloop\");\nvar leng = postman.getEnvironmentVariable(\"bleng3\");\nvar namae = postman.getEnvironmentVariable(\"name2\");\npostman.setEnvironmentVariable(\"boatId2\", jsonData.bid);\ntests[\"Created boat response is 201\"] = responseCode.code === 201;\ntests[\"Check added boat type\"] = jsonData.btype === type;\ntests[\"Check added boat length\"] = jsonData.blength=== (Number(leng));\ntests[\"Check added boat namae\"] = jsonData.name === namae;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493594444456,
+				"name": "create a boat 2 copy",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": [],
+				"isFromCollection": true,
+				"folder": "80d8be71-6e46-e543-f557-0bf6095b1fa2"
+			},
+			{
+				"id": "e16ff893-baab-4285-4b37-8546b4f24242",
+				"headers": "",
+				"url": "{{url}}/boats",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": "tests[\"Get boat response is 204\"] = responseCode.code === 204;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493606526668,
+				"name": "get all boats no content",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "eecda2d5-597d-aa29-98ca-2030a7a23dfd",
+				"headers": "",
+				"url": "{{url}}/boat/{{boatId}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "GET",
+				"data": "{\"name\":\"Jim\"}",
+				"dataMode": "raw",
+				"tests": "var jsonData = JSON.parse(responseBody);\nvar type = postman.getEnvironmentVariable(\"btype\");\nvar leng = postman.getEnvironmentVariable(\"blength\");\nvar namae = postman.getEnvironmentVariable(\"name\");\nvar id = postman.getEnvironmentVariable(\"boatId\");\npostman.setEnvironmentVariable(\"boatUrl\", jsonData.self);\ntests[\"Get boat response is 200\"] = responseCode.code === 200;\ntests[\"Check boat type\"] = jsonData.btype === type;\ntests[\"Check boat length\"] = jsonData.blength=== (Number(leng));\ntests[\"Check boat namae\"] = jsonData.name === namae;\ntests[\"Check boat id\"] = jsonData.bid === id;\ntests[\"Check boat at sea\"] = jsonData.at_sea === true;",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493598077437,
+				"name": "get a boat (valid)",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "f26a43b5-97c6-15b4-5036-e75035252f55",
+				"headers": "",
+				"url": "{{url}}/boats",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Get boat response is 200\"] = responseCode.code === 200;\nnb = postman.getEnvironmentVariable(\"numBoats\");\ntests[\"Length is numBoats-1\"] = jsonData.length === (Number(nb)-1);\n",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493601029761,
+				"name": "get all boats copy",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			},
+			{
+				"id": "f36bf67f-971f-f6bb-0c13-4871abe712ab",
+				"headers": "",
+				"url": "{{url}}/slip/{{slipId}}",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": "var jsonData = JSON.parse(responseBody);\nvar num = postman.getEnvironmentVariable(\"slipnum1\");\nvar id = postman.getEnvironmentVariable(\"slipId\");\nvar url = postman.getEnvironmentVariable(\"slipUrl\");\ntests[\"Get slip response is 200\"] = responseCode.code === 200;\ntests[\"Get slip number\"] = jsonData.number === (Number(num));\ntests[\"Get slip current_boat\"] = jsonData.current_boat === null;\ntests[\"Get slip arr. date\"] = jsonData.arrival_date === null;\ntests[\"Get slip id\"] = jsonData.sid === id;\ntests[\"Get slip url\"] = jsonData.self === url;\n",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493597147638,
+				"name": "get a slip",
+				"description": "",
+				"collectionId": "09f49828-083e-4adc-29e3-d6cf7e6dc475",
+				"responses": []
+			}
+		],
+		"timestamp": 1493169451955,
+		"synced": false,
+		"syncedFilename": "",
+		"remote_id": 0,
+		"remoteLink": "",
+		"remoteLinkUpdatedAt": null,
+		"public": false,
+		"owner": "1888993",
+		"subscribed": false,
+		"createdAt": 1493169451955,
+		"updatedAt": 1493606526746,
+		"write": true,
+		"isDeleted": false,
+		"published": false,
+		"favorite": false,
+		"permissions": {},
+		"syncedPermissions": {},
+		"sharedWithTeam": false
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"id": "e16ff893-baab-4285-4b37-8546b4f24242",
+			"name": "get all boats no content",
+			"url": "{{url}}/boats",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": "The server successfully processed the request, but is not returning any content."
+			},
+			"tests": {
+				"Get boat response is 204": true
+			},
+			"testPassFailCounts": {
+				"Get boat response is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				129
+			],
+			"allTests": [
+				{
+					"Get boat response is 204": true
+				}
+			],
+			"time": 129,
+			"totalRequestTime": 129,
+			"iterationResults": {}
+		},
+		{
+			"id": "426e3af1-ae92-60eb-1686-4a1983acc06a",
+			"name": "create a boat",
+			"url": "{{url}}/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"tests": {
+				"Created boat response is 201": true,
+				"Check added boat type": true,
+				"Check added boat length": true,
+				"Check added boat namae": true
+			},
+			"testPassFailCounts": {
+				"Created boat response is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat length": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat namae": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				195
+			],
+			"allTests": [
+				{
+					"Created boat response is 201": true,
+					"Check added boat type": true,
+					"Check added boat length": true,
+					"Check added boat namae": true
+				}
+			],
+			"time": 195,
+			"totalRequestTime": 195,
+			"iterationResults": {}
+		},
+		{
+			"id": "7e2332eb-b047-e5c5-50c5-148ad7cf1d5b",
+			"name": "create a boat missing required",
+			"url": "{{url}}/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": "The request cannot be fulfilled due to bad syntax."
+			},
+			"tests": {
+				"Created boat response is 400": true
+			},
+			"testPassFailCounts": {
+				"Created boat response is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				53
+			],
+			"allTests": [
+				{
+					"Created boat response is 400": true
+				}
+			],
+			"time": 53,
+			"totalRequestTime": 53,
+			"iterationResults": {}
+		},
+		{
+			"id": "0296170f-87ab-b878-a467-7a2f02ff943d",
+			"name": "get a boat (no id)",
+			"url": "{{url}}/boat/",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": "The request cannot be fulfilled due to bad syntax."
+			},
+			"tests": {
+				"Get boat response is 400": true
+			},
+			"testPassFailCounts": {
+				"Get boat response is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				58
+			],
+			"allTests": [
+				{
+					"Get boat response is 400": true
+				}
+			],
+			"time": 58,
+			"totalRequestTime": 58,
+			"iterationResults": {}
+		},
+		{
+			"id": "eecda2d5-597d-aa29-98ca-2030a7a23dfd",
+			"name": "get a boat (valid)",
+			"url": "{{url}}/boat/{{boatId}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Get boat response is 200": true,
+				"Check boat type": true,
+				"Check boat length": true,
+				"Check boat namae": true,
+				"Check boat id": true,
+				"Check boat at sea": true
+			},
+			"testPassFailCounts": {
+				"Get boat response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat length": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat namae": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat at sea": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				149
+			],
+			"allTests": [
+				{
+					"Get boat response is 200": true,
+					"Check boat type": true,
+					"Check boat length": true,
+					"Check boat namae": true,
+					"Check boat id": true,
+					"Check boat at sea": true
+				}
+			],
+			"time": 149,
+			"totalRequestTime": 149,
+			"iterationResults": {}
+		},
+		{
+			"id": "3c09d4be-415d-641a-d5b0-8736cd80bb3e",
+			"name": "modify a boat bad key",
+			"url": "{{url}}{{boatUrl}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+			},
+			"tests": {
+				"Modify response is 400": true
+			},
+			"testPassFailCounts": {
+				"Modify response is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				68
+			],
+			"allTests": [
+				{
+					"Modify response is 400": true
+				}
+			],
+			"time": 68,
+			"totalRequestTime": 68,
+			"iterationResults": {}
+		},
+		{
+			"id": "19844cda-6d6d-9b88-91b8-79342c038e2f",
+			"name": "modify a boat",
+			"url": "{{url}}/boat/{{boatId}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Patch response is 200": true,
+				"Check boat type": true,
+				"Check boat length": true,
+				"Check boat namae": true,
+				"Check boat url": true
+			},
+			"testPassFailCounts": {
+				"Patch response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat length": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat namae": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat url": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				118
+			],
+			"allTests": [
+				{
+					"Patch response is 200": true,
+					"Check boat type": true,
+					"Check boat length": true,
+					"Check boat namae": true,
+					"Check boat url": true
+				}
+			],
+			"time": 118,
+			"totalRequestTime": 118,
+			"iterationResults": {}
+		},
+		{
+			"id": "34832042-77cb-7f50-156a-5cade0406c49",
+			"name": "replace a boat",
+			"url": "{{url}}/boat/{{boatId}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Patch response is 200": true,
+				"Check boat type": true,
+				"Check boat length": true,
+				"Check boat namae": true,
+				"Check boat url": true
+			},
+			"testPassFailCounts": {
+				"Patch response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat length": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat namae": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat url": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				198
+			],
+			"allTests": [
+				{
+					"Patch response is 200": true,
+					"Check boat type": true,
+					"Check boat length": true,
+					"Check boat namae": true,
+					"Check boat url": true
+				}
+			],
+			"time": 198,
+			"totalRequestTime": 198,
+			"iterationResults": {}
+		},
+		{
+			"id": "5a750dc5-9805-9fec-09f0-edc42c1cf47d",
+			"name": "create a boat 2",
+			"url": "{{url}}/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"tests": {
+				"Created boat response is 201": true,
+				"Check added boat type": true,
+				"Check added boat length": true,
+				"Check added boat namae": true
+			},
+			"testPassFailCounts": {
+				"Created boat response is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat length": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat namae": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				199
+			],
+			"allTests": [
+				{
+					"Created boat response is 201": true,
+					"Check added boat type": true,
+					"Check added boat length": true,
+					"Check added boat namae": true
+				}
+			],
+			"time": 199,
+			"totalRequestTime": 199,
+			"iterationResults": {}
+		},
+		{
+			"id": "479e702a-17f0-70ff-1432-eb7feea89f8c",
+			"name": "get all boats",
+			"url": "{{url}}/boats",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Get boat response is 200": true,
+				"Check num boats": true
+			},
+			"testPassFailCounts": {
+				"Get boat response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check num boats": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				190
+			],
+			"allTests": [
+				{
+					"Get boat response is 200": true,
+					"Check num boats": true
+				}
+			],
+			"time": 190,
+			"totalRequestTime": 190,
+			"iterationResults": {}
+		},
+		{
+			"id": "704241ce-86fb-4ff7-59ff-db25a28577c0",
+			"name": "delete a boat",
+			"url": "{{url}}/boat/{{boatId2}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": "The server successfully processed the request, but is not returning any content."
+			},
+			"tests": {
+				"Delete boat response is 204": true
+			},
+			"testPassFailCounts": {
+				"Delete boat response is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				139
+			],
+			"allTests": [
+				{
+					"Delete boat response is 204": true
+				}
+			],
+			"time": 139,
+			"totalRequestTime": 139,
+			"iterationResults": {}
+		},
+		{
+			"id": "f26a43b5-97c6-15b4-5036-e75035252f55",
+			"name": "get all boats copy",
+			"url": "{{url}}/boats",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Get boat response is 200": true,
+				"Length is numBoats-1": true
+			},
+			"testPassFailCounts": {
+				"Get boat response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Length is numBoats-1": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				99
+			],
+			"allTests": [
+				{
+					"Get boat response is 200": true,
+					"Length is numBoats-1": true
+				}
+			],
+			"time": 99,
+			"totalRequestTime": 99,
+			"iterationResults": {}
+		},
+		{
+			"id": "10f7bcf0-f507-57d7-20d9-5c58c51f2977",
+			"name": "create slip",
+			"url": "{{url}}/slip",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"tests": {
+				"Created slip response is 201": true,
+				"Check added slip number": true,
+				"Check added slip current_boat": true,
+				"Check added slip arr. date": true
+			},
+			"testPassFailCounts": {
+				"Created slip response is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip current_boat": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip arr. date": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				260
+			],
+			"allTests": [
+				{
+					"Created slip response is 201": true,
+					"Check added slip number": true,
+					"Check added slip current_boat": true,
+					"Check added slip arr. date": true
+				}
+			],
+			"time": 260,
+			"totalRequestTime": 260,
+			"iterationResults": {}
+		},
+		{
+			"id": "0a1af730-5ad6-c72e-f0f6-76fe5233e53d",
+			"name": "create slip missing required",
+			"url": "{{url}}/slip",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": "The request cannot be fulfilled due to bad syntax."
+			},
+			"tests": {
+				"Created slip response is 400": true
+			},
+			"testPassFailCounts": {
+				"Created slip response is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4825
+			],
+			"allTests": [
+				{
+					"Created slip response is 400": true
+				}
+			],
+			"time": 4825,
+			"totalRequestTime": 4825,
+			"iterationResults": {}
+		},
+		{
+			"id": "f36bf67f-971f-f6bb-0c13-4871abe712ab",
+			"name": "get a slip",
+			"url": "{{url}}/slip/{{slipId}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Get slip response is 200": true,
+				"Get slip number": true,
+				"Get slip current_boat": true,
+				"Get slip arr. date": true,
+				"Get slip id": true,
+				"Get slip url": true
+			},
+			"testPassFailCounts": {
+				"Get slip response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip current_boat": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip arr. date": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip url": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				94
+			],
+			"allTests": [
+				{
+					"Get slip response is 200": true,
+					"Get slip number": true,
+					"Get slip current_boat": true,
+					"Get slip arr. date": true,
+					"Get slip id": true,
+					"Get slip url": true
+				}
+			],
+			"time": 94,
+			"totalRequestTime": 94,
+			"iterationResults": {}
+		},
+		{
+			"id": "07d6481e-2d57-574f-20da-53a30668ae65",
+			"name": "get a slip (no id)",
+			"url": "{{url}}/slip/",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": "The request cannot be fulfilled due to bad syntax."
+			},
+			"tests": {
+				"Get slip response is 400": true
+			},
+			"testPassFailCounts": {
+				"Get slip response is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				50
+			],
+			"allTests": [
+				{
+					"Get slip response is 400": true
+				}
+			],
+			"time": 50,
+			"totalRequestTime": 50,
+			"iterationResults": {}
+		},
+		{
+			"id": "5e99434b-1f0c-dd84-ae51-e4ebbccbc603",
+			"name": "modify a slip bad key copy",
+			"url": "{{url}}/slip/{{slipId}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+			},
+			"tests": {
+				"Modify response is 403": true
+			},
+			"testPassFailCounts": {
+				"Modify response is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				89
+			],
+			"allTests": [
+				{
+					"Modify response is 403": true
+				}
+			],
+			"time": 89,
+			"totalRequestTime": 89,
+			"iterationResults": {}
+		},
+		{
+			"id": "75b35a16-edff-d191-437d-f3cc2ece3027",
+			"name": "modify a slip",
+			"url": "{{url}}/slip/{{slipId}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Get slip response is 200": true,
+				"Get slip number": true,
+				"Get slip current_boat": true,
+				"Get slip arr. date": true,
+				"Get slip id": true,
+				"Get slip url": true
+			},
+			"testPassFailCounts": {
+				"Get slip response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip current_boat": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip arr. date": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip url": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				159
+			],
+			"allTests": [
+				{
+					"Get slip response is 200": true,
+					"Get slip number": true,
+					"Get slip current_boat": true,
+					"Get slip arr. date": true,
+					"Get slip id": true,
+					"Get slip url": true
+				}
+			],
+			"time": 159,
+			"totalRequestTime": 159,
+			"iterationResults": {}
+		},
+		{
+			"id": "251f86c3-d1bb-1933-02a6-5dbaf90ad312",
+			"name": "modify a slip no boat, arrival date",
+			"url": "{{url}}/slip/{{slipId}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+			},
+			"tests": {
+				"Modify response is 403": true
+			},
+			"testPassFailCounts": {
+				"Modify response is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				224
+			],
+			"allTests": [
+				{
+					"Modify response is 403": true
+				}
+			],
+			"time": 224,
+			"totalRequestTime": 224,
+			"iterationResults": {}
+		},
+		{
+			"id": "180f9790-7a7e-a903-dc10-4a8c54073b0c",
+			"name": "put boat in slip",
+			"url": "{{url}}/slip/{{slipId}}/boat/",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Added boat response is 200": true,
+				"Check added slip current_boat": true,
+				"Check added slip arr. date": true
+			},
+			"testPassFailCounts": {
+				"Added boat response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip current_boat": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip arr. date": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				250
+			],
+			"allTests": [
+				{
+					"Added boat response is 200": true,
+					"Check added slip current_boat": true,
+					"Check added slip arr. date": true
+				}
+			],
+			"time": 250,
+			"totalRequestTime": 250,
+			"iterationResults": {}
+		},
+		{
+			"id": "0965da62-d1d1-996f-7ded-565082cd31ac",
+			"name": "get a boat (valid) not at sea",
+			"url": "{{url}}/boat/{{boatId}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Check boat at sea": true
+			},
+			"testPassFailCounts": {
+				"Check boat at sea": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4161
+			],
+			"allTests": [
+				{
+					"Check boat at sea": true
+				}
+			],
+			"time": 4161,
+			"totalRequestTime": 4161,
+			"iterationResults": {}
+		},
+		{
+			"id": "6fef5796-1c08-fafd-8a1a-c5d32506dbb0",
+			"name": "get boat in slip",
+			"url": "{{url}}/slip/{{slipId}}/boat/",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Get boat response is 200": true,
+				"Check boat type": true,
+				"Check boat length": true,
+				"Check boat namae": true,
+				"Check boat id": true,
+				"Check boat at sea": true
+			},
+			"testPassFailCounts": {
+				"Get boat response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat length": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat namae": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat at sea": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				160
+			],
+			"allTests": [
+				{
+					"Get boat response is 200": true,
+					"Check boat type": true,
+					"Check boat length": true,
+					"Check boat namae": true,
+					"Check boat id": true,
+					"Check boat at sea": true
+				}
+			],
+			"time": 160,
+			"totalRequestTime": 160,
+			"iterationResults": {}
+		},
+		{
+			"id": "8d81e94a-a4c9-7450-396b-b15ebed25933",
+			"name": "remove a boat from slip",
+			"url": "{{url}}/slip/{{slipId}}/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Delete slip response is 200": true,
+				"Check added slip current_boat": true,
+				"Check added slip arr. date": true
+			},
+			"testPassFailCounts": {
+				"Delete slip response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip current_boat": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip arr. date": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				204
+			],
+			"allTests": [
+				{
+					"Delete slip response is 200": true,
+					"Check added slip current_boat": true,
+					"Check added slip arr. date": true
+				}
+			],
+			"time": 204,
+			"totalRequestTime": 204,
+			"iterationResults": {}
+		},
+		{
+			"id": "d92659fe-4d2b-3176-796a-130533babd2a",
+			"name": "create a boat 2 copy",
+			"url": "{{url}}/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"tests": {
+				"Created boat response is 201": true,
+				"Check added boat type": true,
+				"Check added boat length": true,
+				"Check added boat namae": true
+			},
+			"testPassFailCounts": {
+				"Created boat response is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat length": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat namae": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				189
+			],
+			"allTests": [
+				{
+					"Created boat response is 201": true,
+					"Check added boat type": true,
+					"Check added boat length": true,
+					"Check added boat namae": true
+				}
+			],
+			"time": 189,
+			"totalRequestTime": 189,
+			"iterationResults": {}
+		},
+		{
+			"id": "bd106d8f-b246-5c7b-bfa9-fe378eadf1be",
+			"name": "put boat in slip copy",
+			"url": "{{url}}/slip/{{slipId}}/boat/",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Added boat response is 200": true,
+				"Check added slip current_boat": true,
+				"Check added slip arr. date": true
+			},
+			"testPassFailCounts": {
+				"Added boat response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip current_boat": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip arr. date": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				485
+			],
+			"allTests": [
+				{
+					"Added boat response is 200": true,
+					"Check added slip current_boat": true,
+					"Check added slip arr. date": true
+				}
+			],
+			"time": 485,
+			"totalRequestTime": 485,
+			"iterationResults": {}
+		},
+		{
+			"id": "61314092-d3bc-c352-3a93-49579d7a03a2",
+			"name": "put boat in occupied slip",
+			"url": "{{url}}/slip/{{slipId}}/boat/",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+			},
+			"tests": {
+				"Added boat response is 403": true
+			},
+			"testPassFailCounts": {
+				"Added boat response is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				199
+			],
+			"allTests": [
+				{
+					"Added boat response is 403": true
+				}
+			],
+			"time": 199,
+			"totalRequestTime": 199,
+			"iterationResults": {}
+		},
+		{
+			"id": "43185c9a-6648-7481-a812-6e7582e07085",
+			"name": "replace a slip",
+			"url": "{{url}}/slip/{{slipId}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Added boat response is 200": true,
+				"Check added slip current_boat": true,
+				"Check added slip arr. date": true
+			},
+			"testPassFailCounts": {
+				"Added boat response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip current_boat": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip arr. date": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				368
+			],
+			"allTests": [
+				{
+					"Added boat response is 200": true,
+					"Check added slip current_boat": true,
+					"Check added slip arr. date": true
+				}
+			],
+			"time": 368,
+			"totalRequestTime": 368,
+			"iterationResults": {}
+		},
+		{
+			"id": "ab788010-8517-9694-0dec-2a3bf22d568c",
+			"name": "get a boat 2",
+			"url": "{{url}}/boat/{{boatId2}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Check added boat at sea": true
+			},
+			"testPassFailCounts": {
+				"Check added boat at sea": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				91
+			],
+			"allTests": [
+				{
+					"Check added boat at sea": true
+				}
+			],
+			"time": 91,
+			"totalRequestTime": 91,
+			"iterationResults": {}
+		},
+		{
+			"id": "34dec853-c4a3-f682-4364-2a21a2719552",
+			"name": "create slip copy",
+			"url": "{{url}}/slip",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"tests": {
+				"Created slip response is 201": true,
+				"Check added slip number": true,
+				"Check added slip current_boat": true,
+				"Check added slip arr. date": true
+			},
+			"testPassFailCounts": {
+				"Created slip response is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip current_boat": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip arr. date": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				143
+			],
+			"allTests": [
+				{
+					"Created slip response is 201": true,
+					"Check added slip number": true,
+					"Check added slip current_boat": true,
+					"Check added slip arr. date": true
+				}
+			],
+			"time": 143,
+			"totalRequestTime": 143,
+			"iterationResults": {}
+		},
+		{
+			"id": "8fc96047-f06b-c37f-a1c6-9e44a03ed466",
+			"name": "remove a boat from slip copy",
+			"url": "{{url}}/slip/{{slipId2}}/boat",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+			},
+			"tests": {
+				"Delete slip response is 404": true
+			},
+			"testPassFailCounts": {
+				"Delete slip response is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				151
+			],
+			"allTests": [
+				{
+					"Delete slip response is 404": true
+				}
+			],
+			"time": 151,
+			"totalRequestTime": 151,
+			"iterationResults": {}
+		},
+		{
+			"id": "4851325e-dbb1-d484-a062-e3324a9b8cb2",
+			"name": "get all slips",
+			"url": "{{url}}/slips",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Get slip response is 200": true,
+				"Check num slips": true
+			},
+			"testPassFailCounts": {
+				"Get slip response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check num slips": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				129
+			],
+			"allTests": [
+				{
+					"Get slip response is 200": true,
+					"Check num slips": true
+				}
+			],
+			"time": 129,
+			"totalRequestTime": 129,
+			"iterationResults": {}
+		},
+		{
+			"id": "7e55ea1b-e52f-4390-b839-3ea441000c87",
+			"name": "delete a slip",
+			"url": "{{url}}/slip/{{slipId}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": "The server successfully processed the request, but is not returning any content."
+			},
+			"tests": {
+				"Delete slip response is 204": true
+			},
+			"testPassFailCounts": {
+				"Delete slip response is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				212
+			],
+			"allTests": [
+				{
+					"Delete slip response is 204": true
+				}
+			],
+			"time": 212,
+			"totalRequestTime": 212,
+			"iterationResults": {}
+		},
+		{
+			"id": "94576964-bbf5-297d-440e-f9efd3da5df4",
+			"name": "get a boat 2 copy",
+			"url": "{{url}}/boat/{{boatId2}}",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Check added boat at sea": true
+			},
+			"testPassFailCounts": {
+				"Check added boat at sea": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				92
+			],
+			"allTests": [
+				{
+					"Check added boat at sea": true
+				}
+			],
+			"time": 92,
+			"totalRequestTime": 92,
+			"iterationResults": {}
+		},
+		{
+			"id": "b387e1a2-33a9-9a37-645a-349fa6986b11",
+			"name": "get all slips after delete",
+			"url": "{{url}}/slips",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Get slip response is 200": true,
+				"Check num slips": true
+			},
+			"testPassFailCounts": {
+				"Get slip response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check num slips": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				79
+			],
+			"allTests": [
+				{
+					"Get slip response is 200": true,
+					"Check num slips": true
+				}
+			],
+			"time": 79,
+			"totalRequestTime": 79,
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 89,
+	"totalFail": 0,
+	"totalTime": 14209,
+	"lifecycle": "done",
+	"willStop": false,
+	"requests": [
+		{
+			"name": "get all boats no content",
+			"id": "e16ff893-baab-4285-4b37-8546b4f24242",
+			"url": "{{url}}/boats",
+			"time": 129,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": "The server successfully processed the request, but is not returning any content."
+			},
+			"testPassFailCounts": {
+				"Get boat response is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Get boat response is 204"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Get boat response is 204": true
+			}
+		},
+		{
+			"name": "create a boat",
+			"id": "426e3af1-ae92-60eb-1686-4a1983acc06a",
+			"url": "{{url}}/boat",
+			"time": 195,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"testPassFailCounts": {
+				"Created boat response is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat length": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat namae": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Created boat response is 201",
+				"Check added boat type",
+				"Check added boat length",
+				"Check added boat namae"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Created boat response is 201": true,
+				"Check added boat type": true,
+				"Check added boat length": true,
+				"Check added boat namae": true
+			}
+		},
+		{
+			"name": "create a boat missing required",
+			"id": "7e2332eb-b047-e5c5-50c5-148ad7cf1d5b",
+			"url": "{{url}}/boat",
+			"time": 53,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": "The request cannot be fulfilled due to bad syntax."
+			},
+			"testPassFailCounts": {
+				"Created boat response is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Created boat response is 400"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Created boat response is 400": true
+			}
+		},
+		{
+			"name": "get a boat (no id)",
+			"id": "0296170f-87ab-b878-a467-7a2f02ff943d",
+			"url": "{{url}}/boat/",
+			"time": 58,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": "The request cannot be fulfilled due to bad syntax."
+			},
+			"testPassFailCounts": {
+				"Get boat response is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Get boat response is 400"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Get boat response is 400": true
+			}
+		},
+		{
+			"name": "get a boat (valid)",
+			"id": "eecda2d5-597d-aa29-98ca-2030a7a23dfd",
+			"url": "{{url}}/boat/{{boatId}}",
+			"time": 149,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Get boat response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat length": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat namae": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat at sea": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Get boat response is 200",
+				"Check boat type",
+				"Check boat length",
+				"Check boat namae",
+				"Check boat id",
+				"Check boat at sea"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Get boat response is 200": true,
+				"Check boat type": true,
+				"Check boat length": true,
+				"Check boat namae": true,
+				"Check boat id": true,
+				"Check boat at sea": true
+			}
+		},
+		{
+			"name": "modify a boat bad key",
+			"id": "3c09d4be-415d-641a-d5b0-8736cd80bb3e",
+			"url": "{{url}}{{boatUrl}}",
+			"time": 68,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+			},
+			"testPassFailCounts": {
+				"Modify response is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Modify response is 400"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Modify response is 400": true
+			}
+		},
+		{
+			"name": "modify a boat",
+			"id": "19844cda-6d6d-9b88-91b8-79342c038e2f",
+			"url": "{{url}}/boat/{{boatId}}",
+			"time": 118,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Patch response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat length": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat namae": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat url": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Patch response is 200",
+				"Check boat type",
+				"Check boat length",
+				"Check boat namae",
+				"Check boat url"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Patch response is 200": true,
+				"Check boat type": true,
+				"Check boat length": true,
+				"Check boat namae": true,
+				"Check boat url": true
+			}
+		},
+		{
+			"name": "replace a boat",
+			"id": "34832042-77cb-7f50-156a-5cade0406c49",
+			"url": "{{url}}/boat/{{boatId}}",
+			"time": 198,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Patch response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat length": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat namae": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat url": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Patch response is 200",
+				"Check boat type",
+				"Check boat length",
+				"Check boat namae",
+				"Check boat url"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Patch response is 200": true,
+				"Check boat type": true,
+				"Check boat length": true,
+				"Check boat namae": true,
+				"Check boat url": true
+			}
+		},
+		{
+			"name": "create a boat 2",
+			"id": "5a750dc5-9805-9fec-09f0-edc42c1cf47d",
+			"url": "{{url}}/boat",
+			"time": 199,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"testPassFailCounts": {
+				"Created boat response is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat length": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat namae": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Created boat response is 201",
+				"Check added boat type",
+				"Check added boat length",
+				"Check added boat namae"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Created boat response is 201": true,
+				"Check added boat type": true,
+				"Check added boat length": true,
+				"Check added boat namae": true
+			}
+		},
+		{
+			"name": "get all boats",
+			"id": "479e702a-17f0-70ff-1432-eb7feea89f8c",
+			"url": "{{url}}/boats",
+			"time": 190,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Get boat response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check num boats": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Get boat response is 200",
+				"Check num boats"
+			],
+			"gridData": [
+				[
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Get boat response is 200": true,
+				"Check num boats": true
+			}
+		},
+		{
+			"name": "delete a boat",
+			"id": "704241ce-86fb-4ff7-59ff-db25a28577c0",
+			"url": "{{url}}/boat/{{boatId2}}",
+			"time": 139,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": "The server successfully processed the request, but is not returning any content."
+			},
+			"testPassFailCounts": {
+				"Delete boat response is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Delete boat response is 204"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Delete boat response is 204": true
+			}
+		},
+		{
+			"name": "get all boats copy",
+			"id": "f26a43b5-97c6-15b4-5036-e75035252f55",
+			"url": "{{url}}/boats",
+			"time": 99,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Get boat response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Length is numBoats-1": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Get boat response is 200",
+				"Length is numBoats-1"
+			],
+			"gridData": [
+				[
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Get boat response is 200": true,
+				"Length is numBoats-1": true
+			}
+		},
+		{
+			"name": "create slip",
+			"id": "10f7bcf0-f507-57d7-20d9-5c58c51f2977",
+			"url": "{{url}}/slip",
+			"time": 260,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"testPassFailCounts": {
+				"Created slip response is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip current_boat": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip arr. date": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Created slip response is 201",
+				"Check added slip number",
+				"Check added slip current_boat",
+				"Check added slip arr. date"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Created slip response is 201": true,
+				"Check added slip number": true,
+				"Check added slip current_boat": true,
+				"Check added slip arr. date": true
+			}
+		},
+		{
+			"name": "create slip missing required",
+			"id": "0a1af730-5ad6-c72e-f0f6-76fe5233e53d",
+			"url": "{{url}}/slip",
+			"time": 4825,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": "The request cannot be fulfilled due to bad syntax."
+			},
+			"testPassFailCounts": {
+				"Created slip response is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Created slip response is 400"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Created slip response is 400": true
+			}
+		},
+		{
+			"name": "get a slip",
+			"id": "f36bf67f-971f-f6bb-0c13-4871abe712ab",
+			"url": "{{url}}/slip/{{slipId}}",
+			"time": 94,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Get slip response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip current_boat": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip arr. date": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip url": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Get slip response is 200",
+				"Get slip number",
+				"Get slip current_boat",
+				"Get slip arr. date",
+				"Get slip id",
+				"Get slip url"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Get slip response is 200": true,
+				"Get slip number": true,
+				"Get slip current_boat": true,
+				"Get slip arr. date": true,
+				"Get slip id": true,
+				"Get slip url": true
+			}
+		},
+		{
+			"name": "get a slip (no id)",
+			"id": "07d6481e-2d57-574f-20da-53a30668ae65",
+			"url": "{{url}}/slip/",
+			"time": 50,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": "The request cannot be fulfilled due to bad syntax."
+			},
+			"testPassFailCounts": {
+				"Get slip response is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Get slip response is 400"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Get slip response is 400": true
+			}
+		},
+		{
+			"name": "modify a slip bad key copy",
+			"id": "5e99434b-1f0c-dd84-ae51-e4ebbccbc603",
+			"url": "{{url}}/slip/{{slipId}}",
+			"time": 89,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+			},
+			"testPassFailCounts": {
+				"Modify response is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Modify response is 403"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Modify response is 403": true
+			}
+		},
+		{
+			"name": "modify a slip",
+			"id": "75b35a16-edff-d191-437d-f3cc2ece3027",
+			"url": "{{url}}/slip/{{slipId}}",
+			"time": 159,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Get slip response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip current_boat": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip arr. date": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get slip url": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Get slip response is 200",
+				"Get slip number",
+				"Get slip current_boat",
+				"Get slip arr. date",
+				"Get slip id",
+				"Get slip url"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Get slip response is 200": true,
+				"Get slip number": true,
+				"Get slip current_boat": true,
+				"Get slip arr. date": true,
+				"Get slip id": true,
+				"Get slip url": true
+			}
+		},
+		{
+			"name": "modify a slip no boat, arrival date",
+			"id": "251f86c3-d1bb-1933-02a6-5dbaf90ad312",
+			"url": "{{url}}/slip/{{slipId}}",
+			"time": 224,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+			},
+			"testPassFailCounts": {
+				"Modify response is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Modify response is 403"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Modify response is 403": true
+			}
+		},
+		{
+			"name": "put boat in slip",
+			"id": "180f9790-7a7e-a903-dc10-4a8c54073b0c",
+			"url": "{{url}}/slip/{{slipId}}/boat/",
+			"time": 250,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Added boat response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip current_boat": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip arr. date": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Added boat response is 200",
+				"Check added slip current_boat",
+				"Check added slip arr. date"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Added boat response is 200": true,
+				"Check added slip current_boat": true,
+				"Check added slip arr. date": true
+			}
+		},
+		{
+			"name": "get a boat (valid) not at sea",
+			"id": "0965da62-d1d1-996f-7ded-565082cd31ac",
+			"url": "{{url}}/boat/{{boatId}}",
+			"time": 4161,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Check boat at sea": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Check boat at sea"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Check boat at sea": true
+			}
+		},
+		{
+			"name": "get boat in slip",
+			"id": "6fef5796-1c08-fafd-8a1a-c5d32506dbb0",
+			"url": "{{url}}/slip/{{slipId}}/boat/",
+			"time": 160,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Get boat response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat length": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat namae": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check boat at sea": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Get boat response is 200",
+				"Check boat type",
+				"Check boat length",
+				"Check boat namae",
+				"Check boat id",
+				"Check boat at sea"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Get boat response is 200": true,
+				"Check boat type": true,
+				"Check boat length": true,
+				"Check boat namae": true,
+				"Check boat id": true,
+				"Check boat at sea": true
+			}
+		},
+		{
+			"name": "remove a boat from slip",
+			"id": "8d81e94a-a4c9-7450-396b-b15ebed25933",
+			"url": "{{url}}/slip/{{slipId}}/boat",
+			"time": 204,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Delete slip response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip current_boat": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip arr. date": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Delete slip response is 200",
+				"Check added slip current_boat",
+				"Check added slip arr. date"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Delete slip response is 200": true,
+				"Check added slip current_boat": true,
+				"Check added slip arr. date": true
+			}
+		},
+		{
+			"name": "create a boat 2 copy",
+			"id": "d92659fe-4d2b-3176-796a-130533babd2a",
+			"url": "{{url}}/boat",
+			"time": 189,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"testPassFailCounts": {
+				"Created boat response is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat length": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added boat namae": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Created boat response is 201",
+				"Check added boat type",
+				"Check added boat length",
+				"Check added boat namae"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Created boat response is 201": true,
+				"Check added boat type": true,
+				"Check added boat length": true,
+				"Check added boat namae": true
+			}
+		},
+		{
+			"name": "put boat in slip copy",
+			"id": "bd106d8f-b246-5c7b-bfa9-fe378eadf1be",
+			"url": "{{url}}/slip/{{slipId}}/boat/",
+			"time": 485,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Added boat response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip current_boat": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip arr. date": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Added boat response is 200",
+				"Check added slip current_boat",
+				"Check added slip arr. date"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Added boat response is 200": true,
+				"Check added slip current_boat": true,
+				"Check added slip arr. date": true
+			}
+		},
+		{
+			"name": "put boat in occupied slip",
+			"id": "61314092-d3bc-c352-3a93-49579d7a03a2",
+			"url": "{{url}}/slip/{{slipId}}/boat/",
+			"time": 199,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+			},
+			"testPassFailCounts": {
+				"Added boat response is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Added boat response is 403"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Added boat response is 403": true
+			}
+		},
+		{
+			"name": "replace a slip",
+			"id": "43185c9a-6648-7481-a812-6e7582e07085",
+			"url": "{{url}}/slip/{{slipId}}",
+			"time": 368,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Added boat response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip current_boat": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip arr. date": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Added boat response is 200",
+				"Check added slip current_boat",
+				"Check added slip arr. date"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Added boat response is 200": true,
+				"Check added slip current_boat": true,
+				"Check added slip arr. date": true
+			}
+		},
+		{
+			"name": "get a boat 2",
+			"id": "ab788010-8517-9694-0dec-2a3bf22d568c",
+			"url": "{{url}}/boat/{{boatId2}}",
+			"time": 91,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Check added boat at sea": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Check added boat at sea"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Check added boat at sea": true
+			}
+		},
+		{
+			"name": "create slip copy",
+			"id": "34dec853-c4a3-f682-4364-2a21a2719552",
+			"url": "{{url}}/slip",
+			"time": 143,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"testPassFailCounts": {
+				"Created slip response is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip current_boat": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check added slip arr. date": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Created slip response is 201",
+				"Check added slip number",
+				"Check added slip current_boat",
+				"Check added slip arr. date"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Created slip response is 201": true,
+				"Check added slip number": true,
+				"Check added slip current_boat": true,
+				"Check added slip arr. date": true
+			}
+		},
+		{
+			"name": "remove a boat from slip copy",
+			"id": "8fc96047-f06b-c37f-a1c6-9e44a03ed466",
+			"url": "{{url}}/slip/{{slipId2}}/boat",
+			"time": 151,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+			},
+			"testPassFailCounts": {
+				"Delete slip response is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Delete slip response is 404"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Delete slip response is 404": true
+			}
+		},
+		{
+			"name": "get all slips",
+			"id": "4851325e-dbb1-d484-a062-e3324a9b8cb2",
+			"url": "{{url}}/slips",
+			"time": 129,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Get slip response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check num slips": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Get slip response is 200",
+				"Check num slips"
+			],
+			"gridData": [
+				[
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Get slip response is 200": true,
+				"Check num slips": true
+			}
+		},
+		{
+			"name": "delete a slip",
+			"id": "7e55ea1b-e52f-4390-b839-3ea441000c87",
+			"url": "{{url}}/slip/{{slipId}}",
+			"time": 212,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": "The server successfully processed the request, but is not returning any content."
+			},
+			"testPassFailCounts": {
+				"Delete slip response is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Delete slip response is 204"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Delete slip response is 204": true
+			}
+		},
+		{
+			"name": "get a boat 2 copy",
+			"id": "94576964-bbf5-297d-440e-f9efd3da5df4",
+			"url": "{{url}}/boat/{{boatId2}}",
+			"time": 92,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Check added boat at sea": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Check added boat at sea"
+			],
+			"gridData": [
+				[
+					true
+				]
+			],
+			"tests": {
+				"Check added boat at sea": true
+			}
+		},
+		{
+			"name": "get all slips after delete",
+			"id": "b387e1a2-33a9-9a37-645a-349fa6986b11",
+			"url": "{{url}}/slips",
+			"time": 79,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Get slip response is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check num slips": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Get slip response is 200",
+				"Check num slips"
+			],
+			"gridData": [
+				[
+					true,
+					true
+				]
+			],
+			"tests": {
+				"Get slip response is 200": true,
+				"Check num slips": true
+			}
+		}
+	],
+	"synced": false
+}

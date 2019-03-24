@@ -1,3 +1,9 @@
+#*********************************************************************
+#** Author: Collin James
+#** Date: 04/30/2017
+#** Description: An api for managing boats and slips
+#*********************************************************************/
+
 from google.appengine.ext import ndb
 import webapp2
 import json
@@ -19,7 +25,7 @@ class Slip(ndb.Model):
 
 class MainPage(webapp2.RequestHandler):
 	def get(self):
-		self.response.write("Welcome to the assignment 3 boat and slip API. Type http://localhost:8080/boats to get started.")
+		self.response.write("Welcome to the assignment 3 boat and slip API. Visit /boats to get started.")
 
 class BaseHandler(webapp2.RequestHandler):
 	'''from http://webapp2.readthedocs.io/en/latest/guide/exceptions.html'''
@@ -37,7 +43,7 @@ class BaseHandler(webapp2.RequestHandler):
 		else:
 		    self.response.set_status(500)
 
-	def handleClientError(self, code=400, msg="Error"):
+	def setStatusCode(self, code=400, msg="Error"):
 		self.response.set_status(code)
 		self.response.write(msg)
 
@@ -48,48 +54,55 @@ class BoatHandler(BaseHandler):
 		boat_data = json.loads(self.request.body)
 		if not "name" in boat_data:
 			# error
-			self.handleClientError(400, 'Please provide a name')
+			self.setStatusCode(400, 'Please provide a name')
 			return
 		if not "btype" in boat_data:
 			# error
-			self.handleClientError(400, 'Please provide a boat type')
+			self.setStatusCode(400, 'Please provide a boat type')
 			return
 		if not "blength" in boat_data:
 			# error
-			self.handleClientError(400, 'Please provide a boat length')
+			self.setStatusCode(400, 'Please provide a boat length')
 			return
 
 		new_boat = Boat(name=boat_data['name'], btype=boat_data['btype'], blength=boat_data['blength'], at_sea=True)
 		new_boat.put()
-		new_boat.bid = str(new_boat.key.id())
+		# new_boat.bid = str(new_boat.key.id())
+		new_boat.bid = str(new_boat.key.urlsafe())
 		new_boat.put()
 		boat_dict = new_boat.to_dict()
 		boat_dict['self'] = '/boat/' + new_boat.key.urlsafe()
+		self.setStatusCode(201, '')
 		self.response.write(json.dumps(boat_dict))
 
-	def get(self, url=None):
+	def returnAllBoats(self, response):
+		boats = []
+		boats_qry = Boat.query()
+		all_boats = boats_qry.fetch()
+		for boat in all_boats:
+			b = boat.to_dict()
+			b['self'] = '/boat/' + boat.key.urlsafe() # get key for url
+			boats.append(b)
+		if len(boats) == 0:
+			self.setStatusCode(204, '')
+		response.write(json.dumps(boats))
+
+	def get(self, id=None):
 		'''handle GET requests (get information about an item or all items)'''
 		# handle all items
-		if "/boats" in url:
-			boats = []
-			boats_qry = Boat.query()
-			all_boats = boats_qry.fetch()
-			for boat in all_boats:
-				b = boat.to_dict()
-				b['self'] = '/boat/' + boat.key.urlsafe() # get key for url
-				boats.append(b)
-				
-			self.response.write(json.dumps(boats))
+		path = self.request.path
+		if "/boats" in path:
+			self.returnAllBoats(self.response)
+
 		# handle one item
 		else:
-			id = url
 			if id:
 				b = ndb.Key(urlsafe=id).get()
 				b_d = b.to_dict()
 				b_d['self'] = "/boat/" + id
 				self.response.write(json.dumps(b_d))
 			else:
-				self.handleClientError(400, 'Please provide an id')
+				self.setStatusCode(400, 'Please provide an id')
 		
 	def patch(self, id=None):
 		'''handle patch requests (modify info about an item)'''
@@ -99,23 +112,23 @@ class BoatHandler(BaseHandler):
 				b_d = b.to_dict()
 				patch_data = json.loads(self.request.body)
 			else:
-				self.handleClientError(204, 'No such boat')
+				self.setStatusCode(204, 'No such boat')
 				return
 
 			# succeeded, parse patch_data
 			for key in patch_data:
 				if(key in b_d):
 					if(str(key) == 'at_sea'):
-						self.handleClientError(403, 'Please use slip API to manage at_sea')
+						self.setStatusCode(403, 'Please use slip API to manage at_sea')
 						return
 					if(str(key) == 'bid'):
-						self.handleClientError(403, 'Attribute cannot be set')
+						self.setStatusCode(403, 'Attribute cannot be set')
 						return
 
 					setattr(b, str(key), patch_data[key]) #works!
 					##! FIXME - don't allow at_sea to be set here
 				else:
-					self.handleClientError(400, 'Key \''+str(key)+'\' not valid')
+					self.setStatusCode(400, 'Key \''+str(key)+'\' not valid')
 					return # we're done here :(
 			# success! write to the db
 			b.put()
@@ -123,7 +136,7 @@ class BoatHandler(BaseHandler):
 			b_d['self'] = "/boat/" + id
 			self.response.write(json.dumps(b_d))
 		else:
-			self.handleClientError(400, 'Please provide a valid id')
+			self.setStatusCode(400, 'Please provide a valid id')
 
 	def put(self, id=None):
 		'''handle put requests (replace an item)'''
@@ -134,7 +147,7 @@ class BoatHandler(BaseHandler):
 				required = [u"name", u"btype", u"blength"]
 				put_data = json.loads(self.request.body)
 			else:
-				self.handleClientError(204, 'No such boat')
+				self.setStatusCode(204, 'No such boat')
 				return
 
 			if( set(required) == set(put_data.keys()) ): #all required data is present
@@ -143,7 +156,7 @@ class BoatHandler(BaseHandler):
 					setattr(b, str(key), put_data[key])
 			else:
 				# sent an error
-				self.handleClientError(400, 'Please supply all required keys')
+				self.setStatusCode(400, 'Please supply all required keys')
 				return
 			# success! write to the db
 			b.put()
@@ -152,7 +165,7 @@ class BoatHandler(BaseHandler):
 			self.response.write(json.dumps(b_d))
 
 		else:
-			self.handleClientError(400, 'Please provide a valid id')
+			self.setStatusCode(400, 'Please provide a valid id')
 
 	def delete(self, id=None):
 		'''hand delete requests (delete a boat)'''
@@ -171,12 +184,12 @@ class BoatHandler(BaseHandler):
 				# delete the entity
 				k = b.key
 				k.delete() # delete is called on a key
-				self.handleClientError(204, '') # not actually an error, but we have this nice function :)
+				self.setStatusCode(204, '') # not actually an error, but we have this nice function :)
 			else:
-				self.handleClientError(404, 'No such boat')
+				self.setStatusCode(404, 'No such boat')
 				return
 		else:
-			self.handleClientError(400, 'Please provide a valid id')
+			self.setStatusCode(400, 'Please provide a valid id')
 
 class SlipHandler(BaseHandler):
 
@@ -192,7 +205,7 @@ class SlipHandler(BaseHandler):
 			for slip in all_slips:
 				s = slip.to_dict()
 				slips.append(s)
-			self.handleClientError(403, '')
+			self.setStatusCode(403, '')
 			self.response.write(json.dumps(slips))
 			return 1
 
@@ -204,7 +217,7 @@ class SlipHandler(BaseHandler):
 		slip_data = json.loads(self.request.body)
 		if not "number" in slip_data:
 			# error
-			self.handleClientError(400, 'Please provide a slip number')
+			self.setStatusCode(400, 'Please provide a slip number')
 			return
 
 		# # look for slips with the supplied number and ask for a different one
@@ -215,10 +228,12 @@ class SlipHandler(BaseHandler):
 		# valid request
 		new_slip = Slip(number=slip_data["number"])
 		new_slip.put()
-		new_slip.sid = str(new_slip.key.id())
+		# new_slip.sid = str(new_slip.key.id())
+		new_slip.sid = str(new_slip.key.urlsafe())
 		new_slip.put()
 		slip_dict = new_slip.to_dict()
 		slip_dict['self'] = '/slip/' + new_slip.key.urlsafe()
+		self.setStatusCode(201, '')
 		self.response.write(json.dumps(slip_dict))
 
 	def get(self, id=None): #[DONE]
@@ -233,15 +248,15 @@ class SlipHandler(BaseHandler):
 				if s != None:
 					s_d = s.to_dict()
 					print s_d
-					if testNull(s_d["current_boat"]):
+					if testNotNull(s_d["current_boat"]):
 						# return boat information
-						BoatHandler(response=self.response).get(s_d["current_boat"].split('/boat/')[1])
+						BoatHandler(response=self.response, request=self.request).get(s_d["current_boat"].split('/boat/')[1])
 						return
 					else:
-						self.handleClientError(204, 'No boat')
+						self.setStatusCode(204, 'No boat')
 						return
 				else:
-					self.handleClientError(403, 'No such slip')
+					self.setStatusCode(403, 'No such slip')
 					return
 
 		# handle all items [DONE]
@@ -253,7 +268,8 @@ class SlipHandler(BaseHandler):
 				s = slip.to_dict()
 				s['self'] = '/slip/' + slip.key.urlsafe() # get key for url
 				slips.append(s)
-				
+			if len(slips) == 0:
+				self.setStatusCode(204, '')
 			self.response.write(json.dumps(slips))
 		# handle one item [DONE]
 		else:
@@ -264,10 +280,10 @@ class SlipHandler(BaseHandler):
 					s_d['self'] = "/slip/" + id
 					self.response.write(json.dumps(s_d))
 				else:
-					self.handleClientError(204, 'No such slip')
+					self.setStatusCode(204, 'No such slip')
 					return
 			else:
-				self.handleClientError(400, 'Please provide a valid id')
+				self.setStatusCode(400, 'Please provide a valid id')
 
 	def patch(self, id=None): #[FINISH ME]
 		'''handle patch requests (modify info about an item)'''
@@ -277,27 +293,30 @@ class SlipHandler(BaseHandler):
 				s_d = s.to_dict()
 				patch_data = json.loads(self.request.body)
 			else:
-				self.handleClientError(204, 'No such slip')
+				self.setStatusCode(204, 'No such slip')
 				return
 
 			# succeeded, parse patch_data
 			for key in patch_data:
 				if(key in s_d):
 					if(str(key) == 'current_boat'):
-						self.handleClientError(403, 'Please use PUT /slip/id/boat')
+						self.setStatusCode(403, 'Please use PUT /slip/id/boat')
 						return
 					if(str(key) == 'sid'):
-						self.handleClientError(403, 'Attribute cannot be set')
+						self.setStatusCode(403, 'Attribute cannot be set')
 						return
 					if(str(key) == 'number'):
 						if str(key) != s_d["number"]:
 							end = self.findNumber(patch_data[key])
 							if end:
 								return
+					if(str(key) == 'arrival_date' and not testNotNull(s_d["current_boat"])):
+						self.setStatusCode(403, 'No boat set')
+						return
 
-					setattr(b, str(key), patch_data[key]) #works!
+					setattr(s, str(key), patch_data[key]) #works!
 				else:
-					self.handleClientError(400, 'Key \''+str(key)+'\' not valid')
+					self.setStatusCode(400, 'Key \''+str(key)+'\' not valid')
 					return # we're done here :(
 			# success! write to the db
 			s.put()
@@ -305,7 +324,7 @@ class SlipHandler(BaseHandler):
 			s_d['self'] = "/slip/" + id
 			self.response.write(json.dumps(s_d))
 		else:
-			self.handleClientError(400, 'Please provide a valid id')
+			self.setStatusCode(400, 'Please provide a valid id')
 
 	def put(self, url=None):
 		'''handle put requests (replace an item, add a boat)'''
@@ -316,7 +335,7 @@ class SlipHandler(BaseHandler):
 			id = parts[0]
 			put_data = json.loads(self.request.body)
 			if not "arrival_date" in put_data:
-				self.handleClientError(400, 'Please provide an arrival date')
+				self.setStatusCode(400, 'Please provide an arrival date')
 				return
 			if "bid" in put_data: # got a boat id
 				bid = put_data["bid"]
@@ -324,8 +343,8 @@ class SlipHandler(BaseHandler):
 				if id:
 					s = ndb.Key(urlsafe=id).get()
 					s_d = s.to_dict()
-					if testNull(s_d["current_boat"]):
-						self.handleClientError(403, 'A boat already exists')
+					if testNotNull(s_d["current_boat"]):
+						self.setStatusCode(403, 'A boat already exists')
 						# self.response.write(json.dumps(s_d["current_boat"]))
 						return
 					else:
@@ -340,10 +359,10 @@ class SlipHandler(BaseHandler):
 					s_d['self'] = "/slip/" + id
 					self.response.write(json.dumps(s_d))
 				else:
-					self.handleClientError(400, 'Please provide a slip id')
+					self.setStatusCode(400, 'Please provide a slip id')
 					return
 			else:
-				self.handleClientError(400, 'Please provide a boat id')
+				self.setStatusCode(400, 'Please provide a boat id')
 				return
 		# handle replace data (don't allow setting a boat) [FINISH ME]
 		else:
@@ -355,7 +374,7 @@ class SlipHandler(BaseHandler):
 					required = [u"number"]
 					put_data = json.loads(self.request.body)
 				else:
-					self.handleClientError(204, 'No such slip')
+					self.setStatusCode(204, 'No such slip')
 					return
 
 				# if( set(required) & set(put_data.keys()) ): #all required data is present
@@ -367,24 +386,28 @@ class SlipHandler(BaseHandler):
 							return
 					# process the data
 					if "bid" in put_data:
+						b = None
 						# check for boat in current slip and set it to at sea
 						if not "arrival_date" in put_data:
-							self.handleClientError(400, 'Currently need arrival date for replace')
+							self.setStatusCode(400, 'Currently need arrival date for replace')
 							return
 
-						if testNull(s.current_boat):
+						if testNotNull(s.current_boat):
 							# update boat to be at sea
 							b = ndb.Key(urlsafe=s_d["current_boat"].split('/boat/')[1]).get()
 							if b:
 								b.at_sea = True
 							else:
-								self.handleClientError(204, 'No such boat')
+								self.setStatusCode(204, 'No such boat')
 								return
 							# b.put()
+						else:
+							self.setStatusCode(400, 'Dock a boat first')
+							return
 						# add boat
 						s.current_boat = "/boat/" + put_data["bid"]
 						s.arrival_date = put_data["arrival_date"]
-						b2 = ndb.Key(urlsafe=put_data["bid"])
+						b2 = ndb.Key(urlsafe=put_data["bid"]).get()
 						b2.at_sea = False
 						b.put()
 						b2.put()
@@ -401,18 +424,35 @@ class SlipHandler(BaseHandler):
 					self.response.write(json.dumps(s_d))
 				else:
 					# send an error
-					self.handleClientError(400, 'Please supply only required keys')
+					self.setStatusCode(400, 'Please supply only required keys')
 					return
 			else:
-				self.handleClientError(400, 'Please provide a valid id')
+				self.setStatusCode(400, 'Please provide a valid id')
 
-	def delete(self, url=None):
-		'''hand delete requests (delete a slip)'''
-		if "/boat" in url:
-			pass
+	def delete(self, id=None):
+		'''hand delete requests (delete a slip, delete a boat from a slip)'''
+		# handle boat deletion
+		if "/boat" in id:
+			# print "HEEEYYYYY"
+			s = ndb.Key(urlsafe=(id.split('/boat')[0])).get()
+			s_d = s.to_dict()
+
+			if testNotNull(s_d["current_boat"]):
+				b = ndb.Key(urlsafe=s_d["current_boat"].split('/boat/')[1]).get()
+				b.at_sea = True
+				b.put()
+			else:
+				self.setStatusCode(404, 'No boat docked')
+				return
+			s.current_boat = None
+			s.arrival_date = None
+			s.put()
+			s_d = s.to_dict()
+			s_d['self'] = "/slip/" + id
+			self.response.write(json.dumps(s_d))
+			return	
 		# handle slip deletion
 		else:
-			id = url
 			if id:
 				s = ndb.Key(urlsafe=id).get()
 				s_d = s.to_dict()
@@ -420,7 +460,7 @@ class SlipHandler(BaseHandler):
 					# remove the boat from the slip
 					print "HEYYYYYYYY"
 					print  s_d["current_boat"]
-					if testNull(s_d["current_boat"]):
+					if testNotNull(s_d["current_boat"]):
 						b = ndb.Key(urlsafe=s_d["current_boat"].split('/boat/')[1]).get()
 						b.at_sea = True
 						b.put()
@@ -428,15 +468,15 @@ class SlipHandler(BaseHandler):
 					k = s.key
 					k.delete() # delete is called on a key
 					
-					self.handleClientError(204, '') # not actually an error, but we have this nice function :)
+					self.setStatusCode(204, '') # not actually an error, but we have this nice function :)
 					return				
 				else:
-					self.handleClientError(404, 'No such slip')
+					self.setStatusCode(404, 'No such slip')
 					return
 			else:
-				self.handleClientError(400, 'Please provide a valid id')
+				self.setStatusCode(400, 'Please provide a valid id')
 
-def testNull(term):
+def testNotNull(term):
 	return (term != "null" and term != None)
 
 allowed_methods = webapp2.WSGIApplication.allowed_methods
@@ -452,5 +492,4 @@ app = webapp2.WSGIApplication([
 	('/slips', SlipHandler), # return all slips
 	('/slip/(.*)', SlipHandler), # get, put, patch, or delete a specific slip (/slip/id)
 	('/slip/(.*)/boat', SlipHandler), # "get", "delete" or "put" a boat at slip (/slip/id/boat)
-	# ('/slip/(.*)/boat/(.*)', SlipHandler), # "put" a boat in slip (/slip/id/boat/id)
 	], debug=True)
